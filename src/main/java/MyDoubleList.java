@@ -23,6 +23,7 @@ import java.util.Iterator;
 public class MyDoubleList
 {
     private Node first;
+    private Node last;
 
     /**
      * Constructs an empty list.
@@ -60,6 +61,26 @@ public class MyDoubleList
      */
     public void add(int index, String item) {
         // TODO your code here
+    }
+
+    /**
+     * Removes the string from the beginning of the list.
+     * @return String to be removed from this list
+     * @throws IndexOutOfBoundsException if the list is empty
+     */
+    public String removeFirst() {
+        // TODO replace the code here
+        return "";
+    }
+
+    /**
+     * Removes the string from the end of the list.
+     * @return String to be removed from this list
+     * @throws IndexOutOfBoundsException if the list is empty
+     */
+    public String removeLast() {
+        // TODO replace the code here
+        return "";
     }
 
     /**
@@ -156,9 +177,6 @@ public class MyDoubleList
      * <p>
      * If the data in the underlying {@link MyDoubleList} or its children is
      * modified, using the {@link Iterator} is unknown.
-     * //@param root
-     *            the reference to the first node in {@link MyDoubleList}
-     *            for this {@link Iterator}
      * @return a new {@link Iterator} that traverses the specified
      *         {@link MyDoubleList} in pre-order.
      * @throws NullPointerException

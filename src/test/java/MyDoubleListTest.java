@@ -116,7 +116,7 @@ public class MyDoubleListTest {
         assertEquals("seventy-seven", smallDLL.get(5));
         assertEquals("nine", smallDLL.get(6));
 
-        assertEquals("fourteen", smallDLL.remove(0));
+        assertEquals("fourteen", smallDLL.removeFirst());
         // "eighty-nine", "sixty-three", "thirty-six", "twenty-four", "seventy-seven", "nine"
         assertEquals(6, smallDLL.size());
         assertEquals("eighty-nine", smallDLL.get(0));
@@ -150,7 +150,7 @@ public class MyDoubleListTest {
         assertEquals("twenty-four", smallDLL.get(1));
         assertEquals("seventy-seven", smallDLL.get(2));
 
-        assertEquals("seventy-seven", smallDLL.remove(2));
+        assertEquals("seventy-seven", smallDLL.removeLast());
         // "eighty-nine", "twenty-four"
         assertEquals(2, smallDLL.size());
         assertEquals("eighty-nine", smallDLL.get(0));
@@ -175,7 +175,7 @@ public class MyDoubleListTest {
         }
         for(int i = max; i > 0; i--){
             assertEquals(i, bigDLL.size());
-            assertEquals("***" + (i - 1), bigDLL.remove(i - 1));
+            assertEquals("***" + (i - 1), bigDLL.removeLast());
         }
         for(int i = 0; i < max; i++){
             assertEquals(i, bigDLL.size());
