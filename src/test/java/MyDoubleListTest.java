@@ -222,7 +222,7 @@ public class MyDoubleListTest {
         assertFalse(smallDLL.contains("ninety-three"), "Contains thinks it found element ninety-three.");
     }
 
-    private void assertIteratorContains(Iterator<String> itr, String ... elements){
+    private void assertIteratorContains(Iterator<String> itr, String[] elements){
         List<String> found = new LinkedList<>();
         for(String e : elements){
             assertTrue(itr.hasNext(),
@@ -241,13 +241,22 @@ public class MyDoubleListTest {
     }
 
     @Test
-    public void testGetPreOrderIterator() {
+    public void testGetIterator() {
         smallDLL.addLast("One");
         smallDLL.addLast("Two");
         smallDLL.addLast("Three");
         smallDLL.addLast("Four");
         Iterator<String> lister = smallDLL.getIterator();
-        assertIteratorContains(lister, "One", "Two", "Three", "Four");
+        assertIteratorContains(lister,
+                new String[] { "One", "Two", "Three", "Four" });
+
+        smallDLL.addFirst("Zero");
+        smallDLL.addFirst("Minus One");
+        smallDLL.addFirst("Minus Two");
+        smallDLL.addFirst("Minus Three");
+        lister = smallDLL.getIterator();
+        assertIteratorContains(lister,
+                new String[] { "Minus Three", "Minus Two", "Minus One", "Zero", "One", "Two", "Three", "Four" });
     }
 
     @Test

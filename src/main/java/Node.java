@@ -10,6 +10,12 @@ public class Node
     private Node next;
     private Node prev;
 
+    public Node(String item) {
+        value = item;
+        next = null;
+        prev = null;
+    }
+
     public String getValue() {
         return value;
     }
